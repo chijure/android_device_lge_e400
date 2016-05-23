@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/lge/e400/BoardConfigVendor.mk
@@ -65,13 +65,14 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := e400
 # AMSS version to use for GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
-
 # Graphics
 TARGET_PROVIDES_LIBLIGHT := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
+
+# CM10 Hacks
 BOARD_USE_LEGACY_TOUCHSCREEN := true
-BOARD_EGL_NEEDS_LEGACY_FB := true
 TARGET_NO_HW_VSYNC := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_NO_SECURE_PLAYBACK
 
 BOARD_WLAN_DEVICE := qcwcn
 WIFI_EXT_MODULE_PATH := /system/lib/modules/librasdioif.ko

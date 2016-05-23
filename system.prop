@@ -6,7 +6,6 @@ ro.sf.lcd_density=120
 debug.fb.rgb565=0
 debug.sf.hw=1
 debug.enabletr=false
-debug.composition.type=mdp
 ro.opengles.version=131072
 com.qc.hardware=true
 ro.sf.compbypass.enable=0
@@ -23,7 +22,4 @@ ro.telephony.ril_class=LGEQualcommUiccRIL
 ro.telephony.default_network=0
 telephony.lteOnGsmDevice=0
 
-ro.additionalmounts=/mnt/extra-sd
-ro.vold.switchablepair=/mnt/sdcard,/mnt/extra-sd
-
-persist.sys.usb.config=mtp,adb
+persist.sys.usb.config=mass_storage,adb

@@ -14,7 +14,7 @@ Storage | 1GB
 MicroSD | Up to 64GB
 Battery | 1500 mAh
 Dimensions | 102.6 x 61.6 x 11.9 mm
-Display | 1440 x 2560 pixels True HD-IPS
+Display | 320 x 240 pixels
 Camera  | 3.15 MP, 2048 x 1536 pixels
 Release Date | January 2012
 

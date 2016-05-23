@@ -11,7 +11,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=5m \
     dalvik.vm.heapgrowthlimit=32m \
-    dalvik.vm.heapsize=76m
+    dalvik.vm.heapsize=96m
 
 PRODUCT_AAPT_CONFIG := normal mdpi ldpi
 PRODUCT_AAPT_PREF_CONFIG := ldpi
@@ -38,8 +38,6 @@ $(call inherit-product, build/target/product/full.mk)
 # Permission files
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -49,9 +47,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-
-PRODUCT_PACKAGES += \
-    hwprops
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -64,6 +59,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/chgchk:system/bin/chgchk
+	
+# Misc
+PRODUCT_PACKAGES += \
+    lgapversion \
+	hwprops
 
 # HW HALS
 PRODUCT_PACKAGES += \
@@ -72,21 +72,30 @@ PRODUCT_PACKAGES += \
     gralloc.msm7x27a \
     hwcomposer.msm7x27a \
     copybit.msm7x27a \
+#   camera.e400 \
     gps.e400 \
-    audio.a2dp.default \
-    audio.primary.msm7x27a \
-    audio_policy.msm7x27a \
+	libqdutils \
+	libmemalloc \
+	libtilerenderer \
+	power.msm7x27a \
+#   audio.a2dp.default \
+#	audio_policy.conf \
+#	libaudioutils \
+#   audio.primary.msm7x27a \
+#   audio_policy.msm7x27a \
     charger \
     charger_res_images
 
-# OMX 
+# OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libmm-omxcore \
-    libOmxCore
+    libOmxCore \
+	libdivxdrmdecrypt
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_e400
 PRODUCT_DEVICE := e400
 PRODUCT_MODEL := LG-E400
 PRODUCT_MANUFACTURER := LGE
+PRODUCT_BRAND := lge
