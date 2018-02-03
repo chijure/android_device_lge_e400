@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore
 
+# AUTO_VOLUME_CONTROL FIX
+PRODUCT_COPY_FILES += \
+    device/lge/e400/configs/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_e400
 PRODUCT_DEVICE := e400
