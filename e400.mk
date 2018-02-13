@@ -80,6 +80,10 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
+# Apps
+PRODUCT_PACKAGES += \
+    CMFileManager
+
 # OMX 
 PRODUCT_PACKAGES += \
     libstagefrighthw \
