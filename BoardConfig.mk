@@ -64,6 +64,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := e400
 # AMSS version to use for GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
+# USB mass storage
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
+BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 BOARD_WLAN_DEVICE := qcwcn
 WIFI_EXT_MODULE_PATH := /system/lib/modules/librasdioif.ko
