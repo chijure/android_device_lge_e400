@@ -26,6 +26,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+BLUETOOTH_SLEEP_PATH=/proc/bluetooth/sleep/proto
 LOG_TAG="qcom-bluetooth"
 LOG_NAME="${0}:"
 
@@ -49,6 +50,7 @@ failed ()
 
 start_hciattach ()
 {
+  echo 1 > $BLUETOOTH_SLEEP_PATH
   /system/bin/hciattach -n $BTS_DEVICE $BTS_TYPE $BTS_BAUD &
   hciattach_pid=$!
   logi "start_hciattach: pid = $hciattach_pid"
